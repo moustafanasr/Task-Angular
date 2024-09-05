@@ -1,0 +1,83 @@
+<div class="relative w-[100%] flex flex-col justify-end min-h-screen">
+  <div class="w-[100%] flex flex-col justify-center align-middle content-center flex-wrap">
+    <div class="text-center mt-16 sm:mt-16 md:mt-16 lg:mt-0 xl:mt-0 2xl:mt-0">
+      <p dir="rtl" class="text-black font-medium text-xl w-fit mx-auto">
+        <img [src]="imageStar" alt="star" class=" ml-auto mr-[-20px]">
+        أختر نوع المنزل
+      </p>
+      <p dir="rtl" class="text-[#A5A7AB] font-normal text-sm pt-3 w-fit mx-auto">قم بأختيار مصدر شقك الأسكانية كل تستكمل
+        باقي الخطوات
+        <img [src]="imageStar" alt="star"
+          class="mr-auto ml-[-13px] sm:ml-[-13px] md:ml-[-20px] lg:ml-[-20px] xl:ml-[-20px] 2xl:ml-[-20px] w-[25px]">
+      </p>
+
+    </div>
+    <div dir="rtl" class="flex flex-row justify-center align-middle items-center content-center flex-wrap gap-6 mt-12">
+
+      <!-- Cairo Location -->
+      <div dir="rtl"
+        class="relative flex flex-col px-16 py-10 justify-center align-middle items-center content-center border border-inherit border-solid rounded-lg mt-3 cursor-pointer hover:scale-105 hover:shadow-xl"
+        [ngClass]="{'active': selectedLocation === 'cairo'}" (click)="selectLocation('cairo')">
+        <img [src]="imageCorrectActive" alt="Correct Active Image" [class.hidden]="selectedLocation !== 'cairo'"
+          class="absolute top-1 right-1">
+        <img [src]="imageCorrectDisabled" alt="Correct Disabled Image" [class.hidden]="selectedLocation === 'cairo'"
+          class="absolute top-1 right-1">
+        <img [src]="imageFella" alt="Fella">
+        <p class="pt-5">فيلا</p>
+      </div>
+
+      <!-- North Coast Location -->
+      <div dir="rtl"
+        class="relative flex flex-col px-10 py-10 justify-center align-middle items-center content-center border border-inherit border-solid rounded-lg mt-3 cursor-pointer hover:scale-105 hover:shadow-xl"
+        [ngClass]="{'active': selectedLocation === 'northCoast'}" (click)="selectLocation('northCoast')">
+        <img [src]="imageCorrectActive" alt="Correct Active Image" [class.hidden]="selectedLocation !== 'northCoast'"
+          class="absolute top-1 right-1">
+        <img [src]="imageCorrectDisabled" alt="Correct Disabled Image"
+          [class.hidden]="selectedLocation === 'northCoast'" class="absolute top-1 right-1">
+        <img [src]="imageFloor" alt="Floor">
+        <p class="pt-5">شقة دوبليكس</p>
+      </div>
+
+      <!-- Dahab Location -->
+      <div dir="rtl"
+        class="relative flex flex-col px-16 py-10 justify-center align-middle items-center content-center border border-inherit border-solid rounded-lg mt-3 cursor-pointer hover:scale-105 hover:shadow-xl"
+        [ngClass]="{'active': selectedLocation === 'dahab'}" (click)="selectLocation('dahab')">
+        <img [src]="imageCorrectActive" alt="Correct Active Image" [class.hidden]="selectedLocation !== 'dahab'"
+          class="absolute top-1 right-1">
+        <img [src]="imageCorrectDisabled" alt="Correct Disabled Image" [class.hidden]="selectedLocation === 'dahab'"
+          class="absolute top-1 right-1">
+        <img [src]="imageFloor1" alt="Floor1">
+        <p class="pt-5">شقة سكنية</p>
+      </div>
+    </div>
+
+    <!-- Button for "Start Now" -->
+    <div dir="rtl"
+      class="mx-auto mt-28 flex flex-row-reverse relative px-16 py-1 bg-buttonDisplayed rounded-md text-white mt-10 font-medium cursor-pointer"
+      [ngClass]="{'bg-buttonDisplayed': !isDetailsVisible, 'bg-buttonActive': isDetailsVisible}"
+      (click)="navigateToWelcome()">
+      <input type="button" value="التالي" class="cursor-pointer">
+    </div>
+    <div dir="rtl" class="text-center mt-9 mb-8">
+      <p class="text-[#9CA3AF] font-normal text-sm">نحن هنا لمساعدتك في أختيار منزلك بسهولة وعناية</p>
+      <p class="mt-3 text-[#9CA3AF] font-normal text-sm">قم بالضغط على زر "بدء" للبدء في العملية، واتبع التوجيهات لإدخال
+        معلومات الحملة</p>
+    </div>
+
+  </div>
+  <div class="absolute w-full bg-[#DEDFE6] bottom-0 h-[10px] flex flex-row justify-end rounded-xl">
+    <span class="w-[50%] bg-[#3E97FF] h-[10px] rounded-xl"></span>
+  </div>
+  <div dir="rtl"
+    class="absolute top-0 ml-auto flex flex-row-reverse p-5 sm:p-5 md:p-10 lg:p-10 xl:p-10 2xl:p-10 cursor-pointer"
+    (click)="onClickExit()" (mouseenter)="onHover()" (mouseleave)="onLeave()">
+    <img [src]="currentExitImage" alt="EXIT" class="w-[30px]">
+  </div>
+  <div dir="rtl"
+    class="arrow absolute top-0 right-0 ml-auto flex flex-row-reverse p-5 sm:p-5 md:p-10 lg:p-10 xl:p-10 2xl:p-10 cursor-pointer text-sm text-[#83899F] font-normal hover:text-black hover:font-bold"
+    (click)="onClickPreviousPage()">
+    <p> &nbsp;العودة</p>
+    &#8594;
+  </div>
+
+</div>

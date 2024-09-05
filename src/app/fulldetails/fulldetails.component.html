@@ -1,0 +1,88 @@
+<div class="relative w-[100%] flex flex-col justify-start min-h-screen">
+  <div class="w-[100%] flex flex-col mt-24 justify-start items-end align-middle content-end flex-wrap">
+    <div class="text-center mx-auto 2xl:mr-28 xl:mr-28 lg:mr-28 md:mr-28 sm:mr-16 ">
+      <p dir="rtl" class="text-black font-medium text-xl mx-auto mr-[-25px]">قم بكتابة نص الرسالة المرسلة</p>
+      <p dir="rtl" class="text-[#A5A7AB] font-normal text-sm mx-auto">قم بتسمية
+        حملتك و تاريخ إرسال الحملة المتوقع</p>
+    </div>
+    <div dir="rtl" class="flex flex-col justify-center align-middle items-center content-center flex-wrap gap-6 mt-6">
+    </div>
+    <div class="flex flex-col justify-center align-middle items-center content-center w-[100%]">
+      <div
+        class="bg-[#FCFCFC] relative p-5 border border-inherit border-solid rounded-lg w-[95%] sm:w-[95%] md:w-[80%] lg:w-[80%] xl:w-[80%] 2xl:w-[80%] text-center flex flex-col items-end justify-start content-center 2xl:mr-28 xl:mr-28 lg:mr-28 md:mr-28 sm:ml-auto mt-5">
+        <div class="flex flex-row">
+          <p for="design" dir="rtl" class="text-[#615E83] font-normal text-sm w-fit mr-1">تصميم المنزل</p>
+          <img [src]="imageCalendar" alt="Image Calender">
+        </div>
+        <div dir="rtl" class="flex flex-row mt-3">
+          <!-- Radio button for "تصميم حديث" -->
+          <label for="design"
+            class="text-[#A5A7AB] font-normal text-sm w-fit flex flex-row justify-center align-middle items-center space-x-2">
+            <input type="radio" id="design" name="design" value="design1" class="form-radio text-blue-600 ml-1"
+              (change)="onRadioChange('design1')">
+            <span class="text-black font-medium">تصميم حديث</span>
+          </label>
+
+          <!-- Radio button for "تصميم حديث وذكي" -->
+          <label for="design1"
+            class="text-[#A5A7AB] font-normal text-sm w-fit flex flex-row justify-center align-middle items-center space-x-2">
+            <input type="radio" id="design1" name="design" value="design2" class="form-radio text-blue-600 ml-1"
+              (change)="onRadioChange('design2')">
+            <span class="text-black font-medium">تصميم حديث وذكي</span>
+          </label>
+        </div>
+        <img [src]="imageMesasage" alt="Image message"
+          class="absolute top-[-100%] left-[5%] z-[-1] sm:opacity-0 opacity-0 lg:opacity-100 md:opacity-100 xl:opacity-100 2xl:opacity-100">
+      </div>
+    </div>
+
+    <div class="w-[100%]">
+      <form dir="rtl"
+        class=" relative ml-auto border border-inherit border-solid rounded-lg mt-3 w-[95%] sm:w-[95%] md:w-[80%] lg:w-[80%] xl:w-[80%] 2xl:w-[80%] mx-auto 2xl:mr-28 xl:mr-28 lg:mr-28 md:mr-28 sm:mx-auto">
+        <div class="bg-[#FCFCFC] p-3 rounded-lg">
+          <div class="flex flex-row">
+            <img [src]="imageEye" alt="Image Eye">
+            <p for="design" dir="rtl" class="text-[#615E83] font-normal text-sm w-fit mr-1">معاينة وصف المنزل</p>
+          </div>
+          <div class="flex flex-row mt-2">
+            <p for="design" dir="rtl" class="text-[#615E83] font-normal text-sm w-fit mr-1">الموضوع:</p>
+            <p class="mr-2">فيلا قريبة من التجمع الخامس</p>
+          </div>
+        </div>
+        <textarea name="subject" id="subject" [(ngModel)]="textareaValue" placeholder="أكتب الوصف بالتفصيل هنا....."
+          class="w-full h-[200px] resize-none"></textarea>
+      </form>
+    </div>
+
+    <!-- Button for "Start Now" -->
+    <div dir="rtl" class="w-[100%] mx-auto mt-3 flex flex-row-reverse relative">
+      <input type="button" value="الخطوة التالية"
+        [ngClass]="{
+          'bg-[#3E97FF]': isFormFilled(),
+          'bg-[#B0BBD5]': !isFormFilled()
+        }"
+        class="cursor-pointer mx-auto px-16 py-1 rounded-md text-white font-medium" [disabled]="!isFormFilled()"
+        (click)="onInputClick()" />
+    </div>
+
+    <div dir="rtl" class="text-center mt-3 mb-8 mx-auto">
+      <p class="text-[#9CA3AF] font-normal text-sm">قم بالضغط على زر "بدء" للبدء في العملية، لادخال معلومات المنزل</p>
+    </div>
+
+  </div>
+  <div class="absolute w-full bg-[#DEDFE6] bottom-0 h-[10px] flex flex-row justify-end rounded-xl">
+    <span class="w-[50%] bg-[#3E97FF] h-[10px] rounded-xl"></span>
+  </div>
+  <div dir="rtl"
+    class="absolute top-0 ml-auto flex flex-row-reverse p-5 sm:p-5 md:p-10 lg:p-10 xl:p-10 2xl:p-10 cursor-pointer"
+    (click)="onClickExit()" (mouseenter)="onHover()" (mouseleave)="onLeave()">
+    <img [src]="currentExitImage" alt="EXIT" class="w-[30px]">
+  </div>
+  <div dir="rtl"
+    class="arrow absolute top-0 right-0 ml-auto flex flex-row-reverse p-5 sm:p-5 md:p-10 lg:p-10 xl:p-10 2xl:p-10 cursor-pointer text-sm text-[#83899F] font-normal hover:text-black hover:font-bold"
+    (click)="onClickPreviousPage()">
+    <p> &nbsp;العودة</p>
+    &#8594;
+  </div>
+
+</div>

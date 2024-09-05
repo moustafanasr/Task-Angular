@@ -1,0 +1,7 @@
+.content-image{
+  background-image: url("../../assets/image/page1/Rectangle.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}

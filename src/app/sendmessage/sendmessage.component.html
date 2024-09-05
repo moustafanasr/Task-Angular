@@ -1,0 +1,42 @@
+<div class="relative w-full flex flex-col justify-start min-h-screen">
+  <div class="w-full flex flex-col mt-24 justify-center items-center">
+    <div class="text-center mx-auto">
+      <p dir="rtl" class="text-black font-medium text-2xl mx-auto">{{ mainText }}</p>
+      <p dir="rtl" class="text-[#A5A7AB] font-normal text-sm mx-auto mt-5">{{ subText }}</p>
+    </div>
+    <div class="w-full flex flex-row justify-center items-center mt-28 mb-20">
+      <img [src]="imageSend" alt="Image Send" class="ml-[30px]">
+    </div>
+
+    <!-- Conditional rendering -->
+    <div *ngIf="!isProgressComplete; else completedState"
+      class="relative flex flex-row justify-end w-1/2 bg-[#DEDFE6] h-2 rounded-xl">
+      <span class="absolute top-[-30px] right-0 text-sm text-black">جاري الأرسال</span>
+      <span class="absolute top-[-30px] left-0 text-sm text-black">{{ progressValue }}% /100%</span>
+      <div class="h-2 rounded-xl bg-[#3E97FF] transition-all duration-300" [ngStyle]="{ width: progressValue + '%' }">
+      </div>
+    </div>
+
+    <!-- Template for when progress is complete -->
+    <div class="flex flex-row justify-center items-center w-[100%]">
+      <ng-template #completedState>
+        <div class="w-[100%] flex flex-row content-center align-middle justify-center items-center mt-3">
+          <input type="button" value="خروج"
+            class="ml-[35px] px-6 py-3 bg-[#3E97FF] text-white font-medium rounded-md cursor-pointer"
+            (click)="navigateToHome()" />
+        </div>
+      </ng-template>
+    </div>
+  </div>
+
+  <div dir="rtl" class="absolute top-0 left-0 ml-auto flex flex-row-reverse p-5 cursor-pointer" (click)="onClickExit()"
+    (mouseenter)="onHover()" (mouseleave)="onLeave()">
+    <img [src]="currentExitImage" alt="EXIT" class="w-7">
+  </div>
+  <div dir="rtl"
+    class="absolute top-0 right-0 ml-auto flex flex-row-reverse p-5 cursor-pointer text-sm text-[#83899F] font-normal hover:text-black hover:font-bold"
+    (click)="onClickPreviousPage()">
+    <p> &nbsp;العودة</p>
+    &#8594;
+  </div>
+</div>

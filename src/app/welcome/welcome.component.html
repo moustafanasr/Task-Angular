@@ -1,0 +1,131 @@
+<div class="w-[100%] flex flex-row justify-between align-middle content-center items-center sm:flex-wrap-reverse flex-wrap-reverse md:flex-nowrap lg:flex-nowrap xl:flex-nowrap 2xl:flex-nowrap">
+
+
+
+  <div class="w-11/12 2xl:w-8/12 xl:w-8/12 lg:w-7/12 md:w-5/12 sm:5/12 mt-10">
+    <div dir="rtl" class="w-[90%] lg:w-[46%] xl:w-[46%] 2xl:w-[46%] ml-auto flex flex-row-reverse pt-10 cursor-pointer" (click)="onClickExit()"
+      (mouseenter)="onHover()" (mouseleave)="onLeave()">
+      <img [src]="currentExitImage" alt="EXIT" class="w-[30px]">
+    </div>
+    <div class="pt-6 pr-5">
+      <div>
+        <p dir="rtl" class="text-xl text-[#183B56] font-medium">طريقة بناء الحملة الخاصة بك</p>
+      </div>
+      <div>
+        <p dir="rtl" class="text-base pt-3 text-[#83899F] font-normal">الطريقة المختارة لطريقة إنشاء رسالة الحملة</p>
+      </div>
+      <div dir="rtl"
+        class="show-details flex flex-col w-11/12 sm:w-11/12 md:w-11/12 lg:w-11/12 xl:w-[45%] 2xl:w-[45%] ml-auto border border-inherit border-solid rounded-md pt-2 pr-3 pb-5 pl-2 mt-3 cursor-pointer hover:scale-105 shadow-lg"
+        (click)="onShowDetails()">
+        <div class="flex flex-row justify-between">
+          <div>
+            <img [src]="imagePencil" alt="Pencil Image">
+          </div>
+          <div>
+            <img [src]="imageCorrectActive" alt="Correct Active Image" [class.hidden]="!isDetailsVisible">
+            <img [src]="imageCorrectDisabled" alt="Correct Disabled Image" [class.hidden]="isDetailsVisible">
+          </div>
+        </div>
+        <div>
+          <p dir="rtl" class="font-normal text-base text-[#2E2E2E] pt-1 pb-1">إنشاء يدوي</p>
+        </div>
+        <div>
+          <p dir="rtl" class="text-[#83899F] font-normal text-sm">قم بإنشاء رسالة طلب سكنك بشكل يدوي ودقيق. اختر كلماتك
+            بعناية،</p>
+        </div>
+      </div>
+
+      <div dir="rtl"
+        class="flex flex-col w-11/12 sm:w-11/12 md:w-11/12 lg:w-11/12 xl:w-[45%] 2xl:w-[45%] ml-auto border border-inherit border-solid rounded-md pt-2 pr-3 pb-5 pl-2 mt-3 cursor-pointer hover:scale-105 shadow-lg">
+        <div class="flex flex-row justify-between">
+          <div>
+            <img [src]="imageAI" alt="AI Image">
+          </div>
+          <div>
+            <img [src]="imageCorrectActive" alt="Correct Active Image" class="hidden">
+            <img [src]="imageCorrectDisabled" alt="Correct Disabled Image">
+          </div>
+        </div>
+        <div>
+          <p dir="rtl" class="font-normal text-base text-[#2E2E2E] pt-1 pb-1">إنشاء عبر الذكاء الأصطناعي</p>
+        </div>
+        <div>
+          <p dir="rtl" class="text-[#83899F] font-normal text-sm">قم بإنشاء رسالة طلب سكنك بشكل يدوي ودقيق. اختر كلماتك
+            بعناية،</p>
+        </div>
+      </div>
+
+      <div dir="rtl" class="flex flex-col w-11/12 sm:w-11/12 md:w-11/12 lg:w-11/12 xl:w-[45%] 2xl:w-[45%] ml-auto pt-5 details transition-opacity duration-300"
+        [ngClass]="{'opacity-0': !isDetailsVisible, 'opacity-100': isDetailsVisible}">
+        <hr>
+        <p class="text-[#183B56] font-medium text-xl pt-3">قم بتسمية مشروع أختيار</p>
+        <p class="pt-2 text-[#83899F] font-normal text-base">أسم مشروعك يجب ان يكون مميز وواضح</p>
+        <input type="text" placeholder="أسم مشروع مقترح"
+          class="mt-2 py-1 px-2 border border-inherit border-solid rounded-md">
+      </div>
+
+      <div dir="rtl" class=" w-11/12 sm:w-11/12 md:w-11/12 lg:w-11/12 xl:w-[45%] 2xl:w-[45%] ml-auto flex flex-row-reverse relative">
+        <input type="button" value="أبدأ الأن"
+          class="px-14 py-1 bg-buttonDisplayed rounded-md text-white mt-10 font-medium cursor-pointer"
+          [ngClass]="{'bg-buttonDisplayed': !isDetailsVisible, 'bg-buttonActive': isDetailsVisible}"
+          (click)="navigateToHome()"> <!-- Click event navigates to home page -->
+      </div>
+
+    </div>
+  </div>
+
+  <div class="w-11/12 2xl:w-4/12 xl:w-4/12 lg:w-5/12 md:5/12 sm:5/12 h-[100vh] relative">
+    <div
+      class="content-image absolute top-0 right-0 flex flex-col h-[100%] w-[90%] justify-start content-center align-end items-end pt-16 pr-10">
+      <div class="flex flex-row" dir="rtl">
+        <div>
+          <img [src]="imageAdvertise" alt="Advertise Image">
+        </div>
+        <div class="mr-3 text-[#83899F]">
+          <p>تهيئة الحملات الإعلانية</p>
+        </div>
+      </div>
+      <div>
+        <p class="text-[#183B56] text-2xl font-medium pt-10" dir="rtl">مرحبًا بك في منصة أختيار عقارات سكنية للتعمير</p>
+      </div>
+      <div>
+        <p dir="rtl" class="text-[#83899F] text-base w-[90%] ml-auto pt-3 pb-8">قم بإضافة عملائك الحاليين إلي نظامك
+          الجديد لتبدأ التجربة</p>
+      </div>
+      <div>
+        <div class="flex flex-row mb-4" dir="rtl">
+          <div>
+            <img [src]="imageCorrect" alt="Correct Image">
+          </div>
+          <div>
+            <p dir="rtl" class="text-[#464E5F] mr-3 text-base">قم بتحميل شعارك وتفاصيل علامتك التجارية</p>
+          </div>
+        </div>
+        <div class="flex flex-row mb-4" dir="rtl">
+          <div>
+            <img [src]="imageCorrect" alt="Correct Image">
+          </div>
+          <div>
+            <p dir="rtl" class="text-[#464E5F] mr-3 text-base">اختر وخصص الحقول التي تحتاجها</p>
+          </div>
+        </div>
+        <div class="flex flex-row mb-4" dir="rtl">
+          <div>
+            <img [src]="imageCorrect" alt="Correct Image">
+          </div>
+          <div>
+            <p dir="rtl" class="text-[#464E5F] mr-3 text-base">اختر موضوعاً وصمم مظهر استمارتك</p>
+          </div>
+        </div>
+        <div class="flex flex-row mb-4" dir="rtl">
+          <div>
+            <img [src]="imageCorrect" alt="Correct Image">
+          </div>
+          <div>
+            <p dir="rtl" class="text-[#464E5F] mr-3 text-base">ضبط رسالة شكر وإجراءات المتابعة</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

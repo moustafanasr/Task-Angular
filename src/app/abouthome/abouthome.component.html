@@ -1,0 +1,108 @@
+<div class="relative w-[100%] flex flex-col justify-start min-h-screen">
+  <div class="w-[100%] flex flex-col mt-24 justify-start items-end align-middle content-end flex-wrap">
+    <div class="text-center mx-auto 2xl:mr-28 xl:mr-28 lg:mr-28 md:mr-28 sm:mr-16 ">
+      <p dir="rtl" class="text-black font-medium text-xl w-fit mx-auto">
+        <img [src]="imageStar" alt="star" class=" ml-auto mr-[-20px] mb-[20px]">
+        قم بكتابة وصف منزل أحلامك
+        <img [src]="imageStar" alt="star" class="mr-auto ml-[-40px] mt-[20px] w-[20px]">
+      </p>
+
+    </div>
+    <div dir="rtl" class="flex flex-col justify-center align-middle items-center content-center flex-wrap gap-6 mt-6">
+      <div
+        class="text-center mx-auto 2xl:mr-28 xl:mr-28 lg:mr-28 md:mr-28 sm:mx-auto mt-0 sm:mt-0 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0">
+        <p dir="rtl"
+          class="text-[#A5A7AB] font-normal text-sm pt-3 w-fit mr-10 sm:mr-10 md:mr-0 lg:mr-0 xl:mr-0 2xl:mr-0">وصف
+          مختصر عن المنزل</p>
+        <input type="text" [(ngModel)]="inputValue" placeholder="فيلا قريبة من التجمع الخامس"
+          class="placeholder:text-black mt-2 py-1 px-2 border border-inherit border-solid rounded-md mr-10 sm:mr-10 md:mr-0 lg:mr-0 xl:mr-0 2xl:mr-0 w-[300px] md:w-[400px] lg:w-[500px] xl:w-[500px] ">
+      </div>
+      <div
+        class="text-center ml-auto 2xl:mr-28 xl:mr-28 lg:mr-28 md:mr-28 sm:ml-auto mt-0 sm:mt-0 md:mt-0 lg:mt-0 xl:mt-0 2xl:mt-0">
+        <p dir="rtl" class="text-[#A5A7AB] font-normal text-sm w-fit mr-10 sm:mr-10 md:mr-0 lg:mr-0 xl:mr-0 2xl:mr-0">
+          وصف تعبيري عن المنزل</p>
+      </div>
+    </div>
+    <div class="w-[100%]">
+      <form dir="rtl"
+        class="relative ml-auto border border-inherit border-solid rounded-lg mt-3 w-[95%] sm:w-[95%] md:w-[80%] lg:w-[80%] xl:w-[80%] 2xl:w-[80%] mx-auto 2xl:mr-28 xl:mr-28 lg:mr-28 md:mr-28 sm:mx-auto">
+        <img [src]="imageMesasage" alt="Image message"
+          class="absolute top-[-57%] left-0 z-[-1] sm:opacity-0 opacity-0 lg:opacity-100 md:opacity-100 xl:opacity-100 2xl:opacity-100">
+        <label for="subject"
+          class="flex flex-row justify-start align-middle items-center flex-wrap border rounded-tr-lg rounded-tl-lg border-inherit border-solid bg-[#F2F4F7]">
+          <div class="flex flex-row justify-start align-middle items-center border-b">
+            <div
+              class="flex flex-row justify-center align-middle items-center content-center border-l border-inherit border-solid">
+              <img [src]="imageFrame1" alt="Image Frame1" class="m-2 cursor-pointer">
+              <img [src]="imageFrame2" alt="Image Frame2" class="m-2 cursor-pointer">
+            </div>
+            <div
+              class="flex flex-row justify-center align-middle items-center content-center border-l border-inherit border-solid">
+              <img [src]="imageFrame3" alt="Image Frame3" class="m-2 cursor-pointer">
+              <img [src]="imageFrame4" alt="Image Frame4" class="m-2 cursor-pointer">
+            </div>
+            <div
+              class="flex flex-row justify-center align-middle items-center content-center border-l border-inherit border-solid">
+              <img [src]="imageFrame5" alt="Image Frame5" class="m-2 cursor-pointer">
+              <img [src]="imageFrame6" alt="Image Frame6" class="m-2 cursor-pointer">
+              <img [src]="imageFrame7" alt="Image Frame7" class="m-2 cursor-pointer">
+            </div>
+          </div>
+          <div class="flex flex-row justify-start align-middle items-center">
+            <div
+              class="flex flex-row justify-center align-middle items-center content-center border-l border-inherit border-solid">
+              <img [src]="imageFrame8" alt="Image Frame8" class="m-2 cursor-pointer">
+              <img [src]="imageFrame9" alt="Image Frame9" class="m-2 cursor-pointer">
+              <img [src]="imageFrame10" alt="Image Frame10" class="m-2 cursor-pointer">
+              <img [src]="imageFrame11" alt="Image Frame11" class="m-2 cursor-pointer">
+            </div>
+            <div
+              class="flex flex-row justify-center align-middle items-center content-center border-l border-inherit border-solid">
+              <img [src]="imageFrame12" alt="Image Frame12" class="m-2 cursor-pointer">
+              <img [src]="imageFrame13" alt="Image Frame13" class="m-2 cursor-pointer">
+            </div>
+            <div class="flex flex-row justify-center align-middle items-center mr-2 cursor-pointer">
+              <div class="rotate-90 text-[#98A2B3] font-bold">
+                &lt;
+              </div>
+              <span class="mr-1">14</span>
+            </div>
+          </div>
+        </label>
+        <textarea name="subject" id="subject" [(ngModel)]="textareaValue" placeholder="أكتب الوصف بالتفصيل هنا....."
+          class="w-full h-[200px] resize-none"></textarea>
+      </form>
+    </div>
+
+    <!-- Button for "Start Now" -->
+    <div dir="rtl" class="w-[100%] mx-auto mt-3 flex flex-row-reverse relative">
+      <input type="button" value="الخطوة التالية" [ngClass]="{
+      'bg-buttonActive': isFormFilled(),
+      'bg-buttonDisplayed': !isFormFilled()
+    }" class="cursor-pointer mx-auto px-16 py-1 rounded-md text-white font-medium" [disabled]="!isFormFilled()"
+        (click)="onInputClick()" />
+    </div>
+
+
+
+    <div dir="rtl" class="text-center mt-3 mb-8 mx-auto">
+      <p class="text-[#9CA3AF] font-normal text-sm">قم بالضغط على زر "بدء" للبدء في العملية، لادخال معلومات المنزل</p>
+    </div>
+
+  </div>
+  <div class="absolute w-full bg-[#DEDFE6] bottom-0 h-[10px] flex flex-row justify-end rounded-xl">
+    <span class="w-[50%] bg-[#3E97FF] h-[10px] rounded-xl"></span>
+  </div>
+  <div dir="rtl"
+    class="absolute top-0 ml-auto flex flex-row-reverse p-5 sm:p-5 md:p-10 lg:p-10 xl:p-10 2xl:p-10 cursor-pointer"
+    (click)="onClickExit()" (mouseenter)="onHover()" (mouseleave)="onLeave()">
+    <img [src]="currentExitImage" alt="EXIT" class="w-[30px]">
+  </div>
+  <div dir="rtl"
+    class="arrow absolute top-0 right-0 ml-auto flex flex-row-reverse p-5 sm:p-5 md:p-10 lg:p-10 xl:p-10 2xl:p-10 cursor-pointer text-sm text-[#83899F] font-normal hover:text-black hover:font-bold"
+    (click)="onClickPreviousPage()">
+    <p> &nbsp;العودة</p>
+    &#8594;
+  </div>
+
+</div>

@@ -1,0 +1,8 @@
+/* Style for active class */
+.active {
+  border-color: #00f; /* Blue border to indicate active state */
+  background-color: #f0f8ff; /* Light blue background for active state */
+  transform: scale(1.05);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
